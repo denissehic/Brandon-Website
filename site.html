@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    </style>
+    <script>
+        var videos = ["https://drive.google.com/file/d/18iJlWonlFz5n-Cu11GCVnOm3sAoBQop3/preview",
+                      "https://drive.google.com/file/d/1OB6eQGiEMhhTJBpuWb4pmERJofxJWDvT/preview",
+                      "https://drive.google.com/file/d/1JtFNFNRKYs_mElLayD4XmgDHmjgKezRX/preview",
+                      "https://drive.google.com/file/d/10GgwrpLr1Zer1Pn5PP8lq8exW0R3tjC1/preview",
+                      "https://drive.google.com/file/d/16U8ccJ4M2gifnPw1fbPCuwwXKPQShX_L/preview",
+                      "https://drive.google.com/file/d/1QcX4_ZZCJ3jesRLkHP9SF_5YV1azIRQu/preview",
+                      "https://drive.google.com/file/d/1MztHzsg5NtKXl8nwD07P21qfoa2wj5DG/preview",
+                      "https://drive.google.com/file/d/1iIRZdPN9GrAcnIl875tUWZPGo58ZAzzZ/preview",
+                      "https://drive.google.com/file/d/1RPZihdmuFt4a-g3VzrlZlgTi-P3cpgrg/preview",
+                      "https://drive.google.com/file/d/18zRkNnm24EF1GqCeaxqe-FEvShsmTzCT/preview",
+                      "https://drive.google.com/file/d/1Mch18xrcOyqEh0UHOIqLgEcvoN0B0iRL/preview",
+                      "https://drive.google.com/file/d/1TnGnYMdH2_mI5Yb3xBJHCMmMAr7hn8oH/preview",
+                      "https://drive.google.com/file/d/1hydK5LJcivXpbZv4xAttTxv23BETePb-/preview",
+                      "https://drive.google.com/file/d/1-sUZYnWmZqH9TspwndwIenorDZy1vHYh/preview",
+                      "https://drive.google.com/file/d/1Qw6GtCSuNsu69gKWcYQFECaxb-Jz4LTG/preview",
+                      "https://drive.google.com/file/d/1NmInBIeJ8ZUo5D-IPC_6CrUNT-_h1nqO/preview",
+                      "https://drive.google.com/file/d/1ZYD7URwCsqrUB0HBSHOXrqvBAfnYIRQE/preview",
+                      "https://drive.google.com/file/d/10aobvI7qB2LSQ9Ty9kO3bW15pSio3u9c/preview",
+                      "https://drive.google.com/file/d/1AMqP_QLLgNe_ltD8A2smSyixtGoGWF_g/preview",
+                      "https://drive.google.com/file/d/1ZqJN15iwiDkZ0RfRnDpu-mgtumwkV34Y/preview",
+                      "https://drive.google.com/file/d/1RDUiXK6r4B68WBw6yPnZCXpBjDxNF44q/preview",
+                      "https://drive.google.com/file/d/1I5m-TUmvcti8WnAPFNiQ2t_i4_WBf-xi/preview",
+                      "https://drive.google.com/file/d/1qG8MV4eP86dwegkctuMN4T2wJQM3wfja/preview",
+                      "https://drive.google.com/file/d/11Xu4UBTgWcqeNKZlkGlwk5mNfJIRXODX/preview",
+                      "https://drive.google.com/file/d/1i_1tskA2nB-nRgJXXVleTqQZ3df1Ci4m/preview",
+                      "https://drive.google.com/file/d/1x4XuXSpHNBeXQb9dWCqh9W3ghXqLDMaG/preview",
+                      "https://drive.google.com/file/d/1tcHBej9tRxATkXVwiWnd5Akov8O74T7P/preview",
+                      "https://drive.google.com/file/d/1KxaFfuWjQwPolXFz60bAKnp-ViUStiCT/preview",
+                      "https://drive.google.com/file/d/1P4m030LXfrP70ITTs6IZOl_Y-efAKIH8/preview",
+                      "https://drive.google.com/file/d/1ROtuifu-sXSI20mN5V-jj2kDkQsladSs/preview",
+                      "https://drive.google.com/file/d/1oxdYlFixQ-77NEchPtPBzXIwo2t1l4Ts/preview",
+                      "https://drive.google.com/file/d/1sS5GduhVjhSpaRfM30l1Pff4RKn00I6D/preview",
+                      "https://drive.google.com/file/d/1acOXbsX40AW0fPQW4LIhhZSzRGDlS2tm/preview",
+                      "https://drive.google.com/file/d/1Uy3NSOI_8s_UaTen45rWdiu-KXn1r8qP/preview",
+                      "https://drive.google.com/file/d/1tIBivRVQ9LZc9Z7ZuLXRiJJ2YacmoggD/preview",
+                      "https://drive.google.com/file/d/1wZJz_jestUYJo842G3J-o8MAw5j20tIR/preview",
+                      "https://drive.google.com/file/d/1-WvCDwKhbqxFloJ0hs-SQ6Zpp80gyuqA/preview",
+                      "https://drive.google.com/file/d/1fCedzvlUI1i3LJnIRfqoW0uza6XGtDKB/preview",
+                      "https://drive.google.com/file/d/1_bm-jnxnNq-JrsRx9hlElw-K6vJqY118/preview",
+                      "https://drive.google.com/file/d/1IKog5G7kZVNO7KLbxJY3azjqVdWM4Oln/preview",
+                      "https://drive.google.com/file/d/1PfEAydN30ppPbGdWQac7jXEjDWB1HFk8/preview",
+                      "https://drive.google.com/file/d/1KJpxVdHZ1z_7KHLwgpEaJCAb7D8cHwtK/preview",
+                      "https://drive.google.com/file/d/1gSdMtlR-3XCNlLpRDcWBHMeHKqg2Be2f/preview",
+                      "https://drive.google.com/file/d/1dM53kN8qVKVXrP_WjT37jWKHFZdr2bZ0/preview",
+                      "https://drive.google.com/file/d/1WFgfaZmRiKObUqBw0Q09G1CMWv8OpZSR/preview"];
+        window.onload = function () {
+            var playerDiv = document.getElementById("random_player");
+            var player = document.createElement("IFRAME");
+            var randomVideoUrl = videos[Math.floor(Math.random() * videos.length)];
+            player.setAttribute('width', '854');
+            player.setAttribute('height', '480');
+            player.setAttribute('src', randomVideoUrl);
+            playerDiv.appendChild(player);
+        };
+    </script>
+</head>
+
+<body>
+    <center>
+      <div id="random_player"/> </div>
+      <input type="button" class = "button" value="NEW VIDEO" onClick="window.location.reload()">
+    </center>
+</body>
+
+</html>

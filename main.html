@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+  <body style="background-color:white;">
+  <center>
+    <p><font face="Arial" size = "5" color="black">Brandon Evans</font></p>
+    <hr>
+    <div onclick="location.href='site.html';">
+      <iframe width="600" height="1060"
+        src="https://www.youtube.com/embed/QDa9rAeIC9w?autoplay=1&showinfo=0&controls=0&autohid=1" name="iframe_a">
+      </iframe>
+    </div>
+
+    <script>
+      $('iframe').load(function(){
+      $(this).contents().find("body").on('click', function(event) { alert('test'); });
+      });
+    </script>
+  </body>
+  </head>
